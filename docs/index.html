@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		
+		<meta name="description" content="MCP : Des LLM statiques aux agents IA dynamiques et intégrés">
+		<meta name="author" content="Antonin Brugnot">
+
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>MCP</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img style="max-width: 25%;" src="img/mcp.png"/>
+					<h3>MCP</h3>
+					<h5>Des LLM statiques aux agents IA dynamiques et intégrés</h5>
+					<p>
+						<small>Antonin Brugnot</small>
+					</p>
+				</section>
+				<section>
+					<section>
+						<h2>Et si vos IA pouvaient faire autre chose que parler ?</h2>
+					</section>
+					<section>
+						<h2>Model Context Protocol (MCP) : Le pont entre les LLM et le monde réel</h2>
+					</section>
+					<section>
+						<ul>
+							<li class="fragment">Connecter aux bases de données</li>
+							<li class="fragment">Interagir avec des systèmes de fichiers</li>
+							<li class="fragment">Consommer des APIs</li>
+							<li class="fragment">Créer des agents qui agissent, pas seulement qui parlent</li>
+						</ul>
+					</section>
+			    </section>
+				<section>
+					<section>
+						<h2>Le problème des LLM aujourd'hui</h2>
+					</section>
+					<section>
+						<p>Excellents pour :</p>
+						<ul>
+							<li class="fragment">Générer du texte</li>
+							<li class="fragment">Résumer</li>
+							<li class="fragment">Traduire</li>
+							<li class="fragment">Expliquer</li>
+						</ul>
+					</section>
+					<section>
+						<p>Limités pour :</p>
+						<ul>
+							<li class="fragment">Accéder à des données temps réel</li>
+							<li class="fragment">Modifier des systèmes</li>
+							<li class="fragment">S'adapter à un contexte spécifique</li>
+							<li class="fragment">Exécuter des actions concrètes</li>
+						</ul>
+					</section>
+					<section>
+						<img src="img/chevalier-laspales.gif" alt="MCP">
+					</section>
+					<section>
+						<p>Petits anges parties trop tôt</p>
+						<ul>
+							<li class="fragment">Function Calling (OpenAI) → Propriétaire</li>
+							<li class="fragment">LangChain → Over-engineering  </li>
+							<li class="fragment">ChatGPT Plugins → Abandonné</li>
+							<li class="fragment">Solutions custom → Réinventer la roue</li>
+						</ul>
+					</section>
+					<section>
+						<p>Un protocole standardisé créé par Anthropic (2024-11-05) pour :</p>
+						<ul>
+							<li class="fragment">🔌 Connecter les LLM à des outils externes</li>
+							<li class="fragment">🔍 Explorer dynamiquement l'environnement</li>
+							<li class="fragment">⚡ Exécuter des actions via des interfaces standardisées</li>
+							<li class="fragment">🔄 Adapter le comportement selon le contexte</li>
+						</ul>
+					</section>
+					<section>
+						<h2>JsonRPC</h2>
+						<a href="https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/schema/2025-06-18/schema.ts">schema.ts</a>
+					</section>
+					<section>
+						<h2>Un standard ouvert pour transformer les LLM en agents</h2>
+					</section>
+					<section>
+						<h3>3 piliers</h3>
+						<ul>
+							<li class="fragment">Découverte de contexte</li>
+							<li class="fragment">Exécution d'outils</li>
+							<li class="fragment">Architecture modulaire</li>
+						</ul>
+					</section>	
+				</section>
+				<section>
+					<section>
+						<h2>Architecture & Fonctionnalités</h2>
+					</section>
+					<section>
+						<img src="img/mcp_architecture.png" alt="Architecture">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Cas d'usage et MCP Servers aux petits oignons</h2>
+					</section>
+				</section>		
+				<section>
+					<section>
+						<h2>Attention</h2>
+					</section>
+					<section>
+						<p>MCP est encore jeune et en évolution rapide</p>
+						<ul>
+							<li class="fragment">Spécifications en cours d'élaboration</li>
+							<li class="fragment">Implémentations expérimentales</li>
+							<li class="fragment">Communauté en croissance</li>
+						</ul>
+					</section>
+					<section>
+					<h2>Types d'attaques MCP</h2>
+					<table>
+						<thead>
+						<tr>
+							<th>Type d'attaque</th>
+							<th>Description principale</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>Tool Poisoning</td>
+							<td>Injection de directives malveillantes dans la description du tool (y compris via Rug-Pull)</td>
+						</tr>
+						<tr>
+							<td>MPMA (DPMA & GAPMA)</td>
+							<td>Manipulation de la préférence de l’IA via nom/descriptions d’outil</td>
+						</tr>
+						<tr>
+							<td>Step-Controlled Reasoning</td>
+							<td>Interruption malveillante d'étape de raisonnement pour falsifier le résultat</td>
+						</tr>
+						</tbody>
+					</table>
+					</section>
+					<section>
+					<table>
+						<thead>
+						<tr>
+							<th>Type d'attaque</th>
+							<th>Description principale</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>Trivial Trojans</td>
+							<td>Exfiltration via outils (“weather” mimétique) contrôlés par un trojan léger</td>
+						</tr>
+						<tr>
+							<td>Shadowing / Cross-tool</td>
+							<td>Discorde entre le comportement visible et caché, ou combinaison d’outils pour exfiltrer</td>
+						</tr>
+						<tr>
+							<td>Lethal trifecta</td>
+							<td>Trio accès de la donnée, instructions malveillantes mécanisme & d'exfiltration</td>
+						</tr>
+						</tbody>
+					</table>
+					</section>
+					<section>
+						<p><a href="https://www.catonetworks.com/blog/cato-ctrl-poc-attack-targeting-atlassians-mcp/?wvideo=g5saerpu50"><img src="https://embed-ssl.wistia.com/deliveries/a70e870f879f59477ee2016e12ad9d0c.jpg?image_play_button_size=2x&image_crop_resized=960x498&image_play_button_rounded=1&image_play_button_color=3f8666e0" width="400" height="207.5" style="width: 400px; height: 207.5px;"></a></p><p><a href="https://www.catonetworks.com/blog/cato-ctrl-poc-attack-targeting-atlassians-mcp/?wvideo=g5saerpu50">PoC Attack Targeting Atlassian’s MCP | Cato Networks</a></p>
+					</section>
+					<section>
+						<img src="img/github_mcp.jpg" alt="GitHub MCP">
+					</section>
+				</section>			
+				<section>
+					<section>
+						<h2>Conclusion</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2 class="r-fit-text">Merci !</h2>
+					</section>
+					<section data-auto-animate>
+						<h2 data-id="code-title">bio.yaml</h2>
+						<pre data-id="code-animation"><code class="hljs yaml" data-trim data-line-numbers><script type="text/template">
+							first_name: "Antonin"
+							family_name: "Brugnot"
+							company: "Onepoint"
+							twitter: null
+							personal_info:
+							  email: "a.brugnot@groupeonepoint.com"
+							  birth: "21st July, 1987"
+							  photo: "tronche_joviale.png"
+							  location: "Nantes"
+							summary: "Lead Tech, impl DEVOPS, FullStack Java, Cloud"
+						</script></code></pre>
+					</section>
+					<section>
+						<img  style="max-width: 40%;" src="img/qrcode.svg"/>
+						<p>Scan me for more info</p>
+					</section>											
+				</section>	            
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				slideNumber: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [RevealNotes, RevealMarkdown, RevealHighlight ]
+			});
+		</script>
+	</body>
+</html>
