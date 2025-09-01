@@ -74,12 +74,12 @@
 						<img src="img/chevalier-laspales.gif" alt="MCP">
 					</section>
 					<section>
-						<p>Petits anges parties trop tôt</p>
+						<p>Petits anges parties trop tôt 🪦</p>
 						<ul>
-							<li class="fragment">Function Calling (OpenAI) → Propriétaire</li>
-							<li class="fragment">LangChain → Over-engineering  </li>
-							<li class="fragment">ChatGPT Plugins → Abandonné</li>
-							<li class="fragment">Solutions custom → Réinventer la roue</li>
+							<li class="fragment fade-in-then-semi-out">Function Calling (OpenAI) → Propriétaire</li>
+							<li class="fragment fade-in-then-semi-out">Avec LangChain → Over-engineering</li>
+							<li class="fragment fade-in-then-semi-out">ChatGPT Plugins → Abandonné</li>
+							<li class="fragment fade-in-then-semi-out">Solutions custom → Réinventer la roue</li>
 						</ul>
 					</section>
 					<section>
@@ -114,12 +114,25 @@
 					<section>
 						<img src="img/mcp_architecture.png" alt="Architecture">
 					</section>
+
 				</section>
 				<section>
 					<section>
 						<h2>Cas d'usage et MCP Servers aux petits oignons</h2>
 					</section>
-				</section>		
+					<section>
+						<ul>
+							<li class="fragment">Automatisation des tâches</li>
+							<li class="fragment">Support client intelligent</li>
+							<li class="fragment">Analyse de données avancée</li>
+							<li class="fragment">Développement</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Environs 15000 (remote/self-hosted)</h2>
+						<a href="https://mastra.ai/mcp-registry-registry">MCP Registry Registry</a>
+					</section>
+				</section>	
 				<section>
 					<section>
 						<h2>Attention</h2>
@@ -186,6 +199,28 @@
 					</section>
 					<section>
 						<img src="img/github_mcp.jpg" alt="GitHub MCP">
+					</section>
+					<section>
+						<h2>Principe du moindre privilège</h2>
+						  <pre><code data-trim data-noescape>
+							./k8s-mcp-server --read-only
+							</code></pre>
+						  <pre><code data-trim data-noescape>
+							# Via environment variable
+							ENABLED_TOOLS="confluence_search,jira_get_issue,jira_search"
+
+							# Or via command line flag
+							docker run ... --enabled-tools "confluence_search,jira_get_issue,jira_search" ...
+							</code></pre>
+					</section>
+					<section>
+						<h2>Registry avec évaluation de la securité</h2>
+						<a href="https://mseep.ai/">mseep.ai</a>
+					</section>
+					<section>
+						<h2>Audit Logs</h2>
+						<p>Fournissent une trace des actions effectuées par les utilisateurs et les systèmes dans l'environnement MCP. </p>
+						<a href="https://socradar.io/mcp-for-cybersecurity/security-controls-hardening-the-mcp-ecosystem/logging-and-audit-trails/">Logging and Audit Trails</a>
 					</section>
 				</section>			
 				<section>
