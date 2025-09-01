@@ -1,4 +1,4 @@
 ---
 mode: agent
 ---
-Sur le cluster local, cherche les pods en cours d'exécution dans le namespace nommé test.
+Sur le cluster __kind-kind-cluster__ , cherche les pods en cours d'exécution dans le namespace nommé __default__ en utilisant #mcp_k8s. **Interdiction d'utiliser un cluster k8s distant**.
