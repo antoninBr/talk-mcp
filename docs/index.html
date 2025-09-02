@@ -3,211 +3,341 @@
 	<head>
 		<meta charset="utf-8">
 
-		
-		<meta name="description" content="MCP : Des LLM statiques aux agents IA dynamiques et intégrés">
-		<meta name="author" content="Antonin Brugnot">
+		<!-- Métadonnées de la présentation -->
+		<title>Model Context Protocol - Des LLM aux agents IA dynamiques</title>
+		<meta name="description" content="Découvrez le Model Context Protocol (MCP), une technologie révolutionnaire qui transforme les LLM statiques en agents IA dynamiques capables d'interagir avec le monde réel">
+		<meta name="author" content="Antonin Brugnot - Onepoint">
+		<meta name="keywords" content="MCP, Model Context Protocol, IA, Intelligence Artificielle, LLM, Agents, Anthropic, Automatisation">
 
+		<!-- Configuration mobile -->
 		<meta name="mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>MCP</title>
+		<!-- Open Graph pour les réseaux sociaux -->
+		<meta property="og:title" content="Model Context Protocol - Des LLM aux agents IA dynamiques">
+		<meta property="og:description" content="Présentation technique sur MCP par Antonin Brugnot">
+		<meta property="og:type" content="presentation">
+		<meta property="og:url" content="https://antoninbr.github.io/talk-mcp/">
+		<meta property="og:image" content="img/mcp.png">
 
+		<!-- Stylesheets Reveal.js -->
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
 
-		<!-- Theme used for syntax highlighted code -->
+		<!-- Configuration du thème pour le code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="img/mcp.png">
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
+				<!-- Section d'introduction -->
 				<section>
-					<img style="max-width: 25%;" src="img/mcp.png"/>
-					<h3>MCP</h3>
-					<h5>Des LLM statiques aux agents IA dynamiques et intégrés</h5>
+					<img style="max-width: 25%;" src="img/mcp.png" alt="Logo MCP"/>
+					<h3>Model Context Protocol</h3>
+					<h4>Des LLM statiques aux agents IA dynamiques et intégrés</h4>
 					<p>
-						<small>Antonin Brugnot</small>
+						<small>Antonin Brugnot • Onepoint</small>
 					</p>
+					<aside class="notes">
+						Bonjour à tous, aujourd'hui nous allons explorer le Model Context Protocol (MCP), 
+						une technologie qui transforme les LLM en véritables agents capables d'interagir avec le monde réel.
+					</aside>
 				</section>
+
+				<!-- Section problématique -->
 				<section>
-					<section>
-						<h2>Et si vos IA pouvaient faire autre chose que parler ?</h2>
+					<section data-background-color="#2c3e50">
+						<h2>Et si vos IA pouvaient faire plus que parler ?</h2>
+						<aside class="notes">
+							Commençons par nous poser la bonne question : nos IA actuelles sont excellentes pour converser, 
+							mais peuvent-elles vraiment agir dans notre environnement de travail ?
+						</aside>
 					</section>
 					<section>
-						<h2>Model Context Protocol (MCP) : Le pont entre les LLM et le monde réel</h2>
+						<h3>Le défi actuel des LLM</h3>
+						<div class="fragment">
+							<h4>✅ Excellents pour :</h4>
+							<ul>
+								<li class="fragment">Générer du texte cohérent</li>
+								<li class="fragment">Résumer des documents</li>
+								<li class="fragment">Traduire entre langues</li>
+								<li class="fragment">Expliquer des concepts</li>
+							</ul>
+						</div>
 					</section>
 					<section>
+						<h3>Mais limités pour :</h3>
 						<ul>
-							<li class="fragment">Connecter aux bases de données</li>
-							<li class="fragment">Interagir avec des systèmes de fichiers</li>
-							<li class="fragment">Consommer des APIs</li>
-							<li class="fragment">Créer des agents qui agissent, pas seulement qui parlent</li>
+							<li class="fragment">📊 Accéder à des données temps réel</li>
+							<li class="fragment">🔧 Modifier des systèmes existants</li>
+							<li class="fragment">🎯 S'adapter à un contexte spécifique</li>
+							<li class="fragment">⚡ Exécuter des actions concrètes</li>
 						</ul>
+						<aside class="notes">
+							Les LLM restent dans leur bulle textuelle, incapables d'interagir réellement avec nos outils quotidiens.
+						</aside>
+					</section>
+					<section data-background-image="img/chevalier-laspales.gif" data-background-size="contain">
+						<aside class="notes">
+							C'est un peu comme avoir un consultant brillant qui ne peut que vous donner des conseils 
+							mais jamais mettre la main à la pâte !
+						</aside>
 					</section>
 			    </section>
+				<!-- Section historique et MCP -->
 				<section>
-					<section>
-						<h2>Le problème des LLM aujourd'hui</h2>
+					<section data-background-color="#e74c3c">
+						<h2>Les tentatives précédentes</h2>
+						<p class="fragment">Petits anges partis trop tôt 🪦</p>
+						<aside class="notes">
+							Avant MCP, plusieurs solutions ont tenté de résoudre ce problème, 
+							mais chacune avait ses limitations.
+						</aside>
 					</section>
 					<section>
-						<p>Excellents pour :</p>
+						<h3>Échecs du passé</h3>
 						<ul>
-							<li class="fragment">Générer du texte</li>
-							<li class="fragment">Résumer</li>
-							<li class="fragment">Traduire</li>
-							<li class="fragment">Expliquer</li>
+							<li class="fragment fade-in-then-semi-out">
+								<strong>Function Calling (OpenAI)</strong><br>
+								<small>→ Propriétaire et limité à OpenAI</small>
+							</li>
+							<li class="fragment fade-in-then-semi-out">
+								<strong>LangChain</strong><br>
+								<small>→ Over-engineering et complexité</small>
+							</li>
+							<li class="fragment fade-in-then-semi-out">
+								<strong>ChatGPT Plugins</strong><br>
+								<small>→ Abandonné par OpenAI</small>
+							</li>
+							<li class="fragment fade-in-then-semi-out">
+								<strong>Solutions custom</strong><br>
+								<small>→ Réinventer la roue à chaque fois</small>
+							</li>
 						</ul>
 					</section>
-					<section>
-						<p>Limités pour :</p>
-						<ul>
-							<li class="fragment">Accéder à des données temps réel</li>
-							<li class="fragment">Modifier des systèmes</li>
-							<li class="fragment">S'adapter à un contexte spécifique</li>
-							<li class="fragment">Exécuter des actions concrètes</li>
-						</ul>
+					<section data-background-color="#27ae60">
+						<h2>Model Context Protocol</h2>
+						<h4 class="fragment">La solution standardisée</h4>
+						<p class="fragment">
+							<small>Créé par Anthropic • Publié le 25 novembre 2024</small>
+						</p>
+						<aside class="notes">
+							MCP arrive comme une solution ouverte et standardisée pour connecter 
+							les LLM à des outils externes de manière sécurisée et efficace.
+						</aside>
 					</section>
 					<section>
-						<img src="img/chevalier-laspales.gif" alt="MCP">
-					</section>
-					<section>
-						<p>Petits anges parties trop tôt 🪦</p>
-						<ul>
-							<li class="fragment fade-in-then-semi-out">Function Calling (OpenAI) → Propriétaire</li>
-							<li class="fragment fade-in-then-semi-out">Avec LangChain → Over-engineering</li>
-							<li class="fragment fade-in-then-semi-out">ChatGPT Plugins → Abandonné</li>
-							<li class="fragment fade-in-then-semi-out">Solutions custom → Réinventer la roue</li>
-						</ul>
-					</section>
-					<section>
-						<p>Un protocole standardisé créé par Anthropic (2024-11-05) pour :</p>
+						<h3>Les promesses de MCP</h3>
 						<ul>
 							<li class="fragment">🔌 Connecter les LLM à des outils externes</li>
 							<li class="fragment">🔍 Explorer dynamiquement l'environnement</li>
 							<li class="fragment">⚡ Exécuter des actions via des interfaces standardisées</li>
-							<li class="fragment">🔄 Adapter le comportement selon le contexte</li>
+							<li class="fragment">🔄 S'adapter au contexte en temps réel</li>
 						</ul>
 					</section>
 					<section>
-						<h2>JsonRPC</h2>
-						<a href="https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/schema/2025-06-18/schema.ts">schema.ts</a>
-					</section>
-					<section>
-						<h2>Un standard ouvert pour transformer les LLM en agents</h2>
-					</section>
-					<section>
-						<h3>3 piliers</h3>
-						<ul>
-							<li class="fragment">Découverte de contexte</li>
-							<li class="fragment">Exécution d'outils</li>
-							<li class="fragment">Architecture modulaire</li>
-						</ul>
-					</section>
-					<section>
-						<h3>SDK</h3>
-						<ul>
-							<li class="fragment grow">Node.js</li>
-							<li class="fragment">Python</li>
-							<li class="fragment">Java</li>
-							<li class="fragment">...</li>
-						</ul>
+						<h3>Fondations techniques</h3>
+						<div class="fragment">
+							<h4>🔧 JsonRPC</h4>
+							<p><small>
+								<a href="https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/schema/2025-06-18/schema.ts">
+									Schéma standardisé
+								</a>
+							</small></p>
+						</div>
+						<div class="fragment">
+							<h4>🏗️ Architecture modulaire</h4>
+							<p><small>SDK disponibles pour Node.js, Python, Java...</small></p>
+						</div>
 					</section>
 				</section>
+				<!-- Section architecture -->
 				<section>
-					<section>
-						<h2>Architecture & Fonctionnalités</h2>
+					<section data-background-color="#3498db">
+						<h2>Architecture & Fonctionnement</h2>
+						<aside class="notes">
+							Regardons maintenant comment MCP fonctionne concrètement et quelle est son architecture.
+						</aside>
 					</section>
 					<section>
-						<img src="img/mcp_architecture.png" alt="Architecture">
+						<h3>Les 3 piliers de MCP</h3>
+						<div class="fragment">
+							<h4>🔍 Découverte de contexte</h4>
+							<p><small>Exploration dynamique des ressources disponibles</small></p>
+						</div>
+						<div class="fragment">
+							<h4>🛠️ Exécution d'outils</h4>
+							<p><small>Interface standardisée pour les actions</small></p>
+						</div>
+						<div class="fragment">
+							<h4>🏗️ Architecture modulaire</h4>
+							<p><small>Composants réutilisables et extensibles</small></p>
+						</div>
+					</section>
+					<section data-background-image="img/mcp_architecture.png" data-background-size="contain">
+						<aside class="notes">
+							Cette architecture permet une communication bidirectionnelle entre l'IA et les outils externes,
+							avec une couche d'abstraction qui garantit la sécurité et la standardisation.
+						</aside>
 					</section>
 					<section>
-						<p>Outil officiel de test/debug MCP WebUI</p>
-						<a href="https://github.com/modelcontextprotocol/inspector">MCP Inspector</a>
+						<h3>Outils de développement</h3>
+						<div class="fragment">
+							<h4>🧪 MCP Inspector</h4>
+							<p><small>
+								<a href="https://github.com/modelcontextprotocol/inspector">
+									Outil officiel de test et debug
+								</a>
+							</small></p>
+						</div>
+						<div class="fragment">
+							<h4>📦 SDK Multi-langages</h4>
+							<ul style="font-size: 0.8em;">
+								<li class="fragment highlight-green">Node.js (référence)</li>
+								<li class="fragment">Python</li>
+								<li class="fragment">Java</li>
+								<li class="fragment">Et bien d'autres...</li>
+							</ul>
+						</div>
 					</section>
 				</section>
+				<!-- Section cas d'usage -->
 				<section>
+					<section data-background-color="#9b59b6">
+						<h2>Cas d'usage concrets</h2>
+						<h4 class="fragment">~15 000 serveurs MCP disponibles</h4>
+						<p class="fragment">
+							<small>
+								<a href="https://mastra.ai/mcp-registry-registry">MCP Registry Registry</a>
+							</small>
+						</p>
+						<aside class="notes">
+							L'écosystème MCP s'est développé rapidement avec une multitude de serveurs 
+							disponibles pour différents cas d'usage.
+						</aside>
+					</section>
+					
 					<section>
-						<h2>Cas d'usage et MCP Servers aux petits oignons</h2>
+						<h3>Domaines d'application</h3>
+						<ul>
+							<li class="fragment highlight-current-blue">🧠 Développement assisté par IA</li>
+							<li class="fragment highlight-current-blue">⚡ Automatisation des tâches</li>
+							<li class="fragment highlight-current-blue">🔍 Analyse de données avancée</li>
+							<li class="fragment highlight-current-blue">🎯 Support client intelligent</li>
+						</ul>
+					</section>
+
+					<!-- Sous-section développement -->
+					<section>
+						<h3>🧠 Développement avec IA</h3>
 					</section>
 					<section>
+						<h4>GitHub Copilot + MCP</h4>
+						<p>Intégration native de MCP dans GitHub Copilot pour une assistance développement complète</p>
+						<img style="max-width: 70%;" src="img/copilot.png" alt="GitHub Copilot avec MCP"/>
+					</section>
+					<section>
+						<h4>mcp-github</h4>
 						<ul>
-							<li class="fragment shrink">Analyse de données avancée</li>
-							<li class="fragment grow">Automatisation des tâches</li>
-							<li class="fragment grow">Support client intelligent</li>
-							<li class="fragment grow">Développement</li>
+							<li class="fragment">🔄 Gestion des pull requests</li>
+							<li class="fragment">📋 Création d'issues automatisée</li>
+							<li class="fragment">🔍 Recherche dans le code</li>
+							<li class="fragment">📊 Analyse des repositories</li>
+						</ul>
+						<p class="fragment"><small>💡 Un équivalent existe pour GitLab</small></p>
+					</section>
+
+					<!-- Sous-section recherche/données -->
+					<section>
+						<h3>🔍 Recherche et données</h3>
+					</section>
+					<section>
+						<h4>tavily-mcp</h4>
+						<div class="fragment">
+							<p>Recherche internet intelligente pour remplacer le fetch basique</p>
+							<img style="max-width: 60%;" src="img/tavily.png" alt="Tavily search results"/>
+						</div>
+					</section>
+					<section>
+						<h4>context7-mcp</h4>
+						<div class="fragment">
+							<p>Gestion du contexte documentaire à jour en temps réel</p>
+							<img style="max-width: 70%;" src="img/context7.png" alt="Context7 interface"/>
+						</div>
+					</section>
+					<section>
+						<img style="max-width: 80%;" src="img/context7_2.png" alt="Context7 detailed view"/>
+					</section>
+
+					<!-- Sous-section entreprise -->
+					<section>
+						<h3>🏢 Outils d'entreprise</h3>
+					</section>
+					<section>
+						<h4>mcp-atlassian</h4>
+						<ul>
+							<li class="fragment">📝 Confluence (SaaS ou On-Premise)</li>
+							<li class="fragment">🎫 Jira (gestion de tickets)</li>
+							<li class="fragment">🔍 Recherche unifiée</li>
+							<li class="fragment">📊 Rapports automatisés</li>
 						</ul>
 					</section>
 					<section>
-						<h2>Environs 15000 (remote/self-hosted)</h2>
-						<a href="https://mastra.ai/mcp-registry-registry">MCP Registry Registry</a>
+						<h4>kubernetes-mcp-server</h4>
+						<ul>
+							<li class="fragment">☸️ Gestion via kubeconfig</li>
+							<li class="fragment">📦 Support Helm intégré</li>
+							<li class="fragment">🔍 Inspection des pods</li>
+							<li class="fragment">📊 Monitoring des ressources</li>
+						</ul>
+					</section>
+
+					<!-- Sous-section workflow -->
+					<section>
+						<h3>🔄 Workflows intelligents</h3>
 					</section>
 					<section>
-						<h2>Workflow agentique avec n8n</h2>
-						<img  style="max-width: 75%;" src="img/n8n_mcp.png" alt="n8n Workflow">
+						<h4>n8n + MCP</h4>
+						<p>Workflows agentiques pour l'automatisation avancée</p>
+						<img style="max-width: 75%;" src="img/n8n_mcp.png" alt="n8n Workflow avec MCP"/>
 					</section>
 					<section>
-						<h2>Github Copilot</h2>
-						<p>Intégration de MCP avec Github Copilot pour une assistance au développement améliorée.</p>
-					</section>
-					<section>
-						<img src="img/copilot.png" alt="Copilot List">
-					</section>
-					<section>
-						<h2>mcp-github</h2>
-						<p>MCP Server pour intégrer des fonctionnalités GitHub</p>
-						<p>.. il y en a un aussi pour Gitlab</p>
-					</section>
-					<section>
-						<h2>tavily-mcp</h2>
-						<p>MCP Server pour utiliser Tavily pour les recherches internet</p>
-						<p>.. pour remplacer le fetch</p>
-					</section>
-					<section>
-						<img src="img/tavily.png" alt="Tavily">
-					</section>
-					<section>
-						<h2>mcp-atlassian</h2>
-						<p>C'est assez clair (saas ou onPrem)</p>
-					</section>
-					<section>
-						<h2>context7-mcp</h2>
-						<p>MCP Server Context7 pour une gestion du contexte à jour</p>
-					</section>
-					<section>
-						<img src="img/context7.png" alt="Context7">
-					</section>
-					<section>
-						<img src="img/context7_2.png" alt="Context7_2">
-					</section>
-					<section>
-						<h2>kubernetes-mcp-server</h2>
-						<p>MCP Server Kubernetes avec gestion via kubeconfig</p>
-						<p>Gère aussi Helm</p>
-					</section>
-					<section>
-						<h2>@mindpilot/mcp</h2>
-						<p>MCP Server MindPilot pour exploration des sources</p>
-						<p>Diagrammes exposés avec possibilité de partage</p>
+						<h4>@mindpilot/mcp</h4>
+						<ul>
+							<li class="fragment">🗺️ Exploration visuelle des sources</li>
+							<li class="fragment">📊 Diagrammes automatiques</li>
+							<li class="fragment">🔗 Partage de visualisations</li>
+							<li class="fragment">🧭 Navigation intelligente</li>
+						</ul>
 					</section>
 				</section>	
 				<section>
-					<section>
-						<h2>Attention</h2>
-						<img src="img/virus.png" alt="Virus">
+					<section data-background-color="#e74c3c" data-background-image="img/virus.png" data-background-size="20%" data-background-position="top right">
+						<h2>⚠️ Sécurité et vigilance</h2>
+						<aside class="notes">
+							Parlons maintenant des aspects cruciaux de sécurité. MCP, comme toute technologie puissante, 
+							doit être utilisé avec précaution.
+						</aside>
 					</section>
 					<section>
-						<p>MCP est encore jeune et en évolution rapide</p>
+						<h3>État actuel de MCP</h3>
 						<ul>
-							<li class="fragment">Spécifications en cours d'élaboration</li>
-							<li class="fragment">Implémentations expérimentales</li>
-							<li class="fragment">Communauté en croissance</li>
+							<li class="fragment">📅 Protocole récent (novembre 2024)</li>
+							<li class="fragment">🧪 Spécifications en évolution</li>
+							<li class="fragment">🌱 Communauté en croissance rapide</li>
+							<li class="fragment">⚠️ Implémentations encore expérimentales</li>
 						</ul>
+						<p class="fragment" style="color: #f39c12;">
+							<strong>→ Prudence recommandée en production</strong>
+						</p>
 					</section>
 					<section>
-					<h2>Types d'attaques MCP 👾</h2>
+					<h3>🎯 Vecteurs d'attaque principaux</h3>
 					<table>
 						<thead>
 						<tr>
@@ -261,59 +391,121 @@
 					<section>
 						<img src="img/github_mcp.jpg" alt="GitHub MCP">
 					</section>
+					<!-- Bonnes pratiques -->
 					<section>
-						<h2>Principe du moindre privilège</h2>
-						  <pre><code data-trim data-noescape>
-							./k8s-mcp-server --read-only
-							</code></pre>
-						  <pre><code data-trim data-noescape>
-							# Via environment variable
-							ENABLED_TOOLS="confluence_search,jira_get_issue,jira_search"
+						<h3>🛡️ Bonnes pratiques de sécurité</h3>
+					</section>
+					<section>
+						<h4>Principe du moindre privilège</h4>
+						<pre class="fragment"><code data-trim>
+# Mode lecture seule
+./k8s-mcp-server --read-only
+						</code></pre>
+						<pre class="fragment"><code data-trim>
+# Limitation des outils
+ENABLED_TOOLS="confluence_search,jira_get_issue"
 
-							# Or via command line flag
-							docker run ... --enabled-tools "confluence_search,jira_get_issue,jira_search" ...
-							</code></pre>
+# Ou via CLI
+docker run ... --enabled-tools "tool1,tool2" ...
+						</code></pre>
 					</section>
 					<section>
-						<h2>Registry avec évaluation de la securité</h2>
-						<a href="https://mseep.ai/">mseep.ai</a>
+						<h4>Audit et surveillance</h4>
+						<ul>
+							<li class="fragment">📊 Logs détaillés de toutes les actions</li>
+							<li class="fragment">🔍 Monitoring en temps réel</li>
+							<li class="fragment">🚨 Alertes sur activités suspectes</li>
+							<li class="fragment">📈 Analyse des patterns d'usage</li>
+						</ul>
+						<p class="fragment">
+							<small>
+								<a href="https://socradar.io/mcp-for-cybersecurity/security-controls-hardening-the-mcp-ecosystem/logging-and-audit-trails/">
+									Guide : Logging and Audit Trails
+								</a>
+							</small>
+						</p>
 					</section>
 					<section>
-						<h2>Audit Logs</h2>
-						<p>Fournissent une trace des actions effectuées par les utilisateurs et les systèmes dans l'environnement MCP. </p>
-						<a href="https://socradar.io/mcp-for-cybersecurity/security-controls-hardening-the-mcp-ecosystem/logging-and-audit-trails/">Logging and Audit Trails</a>
+						<h4>Validation et registries</h4>
+						<div class="fragment">
+							<h5>🔍 Registry avec évaluation sécurité</h5>
+							<p>
+								<a href="https://mseep.ai/">mseep.ai</a> - 
+								<small>Évaluation automatisée des serveurs MCP</small>
+							</p>
+						</div>
+						<div class="fragment">
+							<h5>✅ Tests de sécurité</h5>
+							<ul style="font-size: 0.8em;">
+								<li>Validation des permissions</li>
+								<li>Scan des vulnérabilités</li>
+								<li>Audit du code source</li>
+							</ul>
+						</div>
 					</section>
 				</section>
-				<section>
-					<h2>Démo</h2>
+				<!-- Section démo -->
+				<section data-background-color="#34495e">
+					<h2>🚀 Démonstration</h2>
+					<p class="fragment">Voyons MCP en action !</p>
+					<aside class="notes">
+						Nous allons maintenant voir une démonstration concrète de MCP avec un cas d'usage pratique.
+					</aside>
 				</section>		
+				
+				<!-- Section conclusion -->
 				<section>
+					<section data-background-color="#2c3e50">
+						<h2>🎯 Points clés à retenir</h2>
+					</section>
 					<section>
-						<h2>Conclusion</h2>
+						<h3>MCP transforme les LLM en agents</h3>
+						<ul>
+							<li class="fragment">🔌 Connexion standardisée aux outils externes</li>
+							<li class="fragment">🏗️ Architecture modulaire et extensible</li>
+							<li class="fragment">🌍 Écosystème en croissance rapide</li>
+							<li class="fragment">⚠️ Attention aux enjeux de sécurité</li>
+						</ul>
+					</section>
+					<section>
+						<h3>L'avenir de l'IA interactive</h3>
+						<p class="fragment">MCP ouvre la voie vers des agents IA véritablement intégrés à nos environnements de travail</p>
+						<p class="fragment" style="color: #3498db;">
+							<strong>🚀 Le futur, c'est maintenant !</strong>
+						</p>
 					</section>
 				</section>
+				<!-- Section finale -->
 				<section>
-					<section>
-						<h2 class="r-fit-text">Merci !</h2>
+					<section data-background-gradient="linear-gradient(45deg, #2c3e50, #3498db)">
+						<h2 class="r-fit-text">Merci pour votre attention ! 🙏</h2>
+						<p class="fragment">Des questions ?</p>
 					</section>
 					<section data-auto-animate>
-						<h2 data-id="code-title">bio.yaml</h2>
+						<h2 data-id="code-title">Contact & Bio</h2>
 						<pre data-id="code-animation"><code class="hljs yaml" data-trim data-line-numbers><script type="text/template">
-							first_name: "Antonin"
-							family_name: "Brugnot"
-							company: "Onepoint"
-							twitter: null
-							personal_info:
-							  email: "a.brugnot@groupeonepoint.com"
-							  birth: "21st July, 1987"
-							  photo: "tronche_joviale.png"
-							  location: "Nantes"
-							summary: "Lead Tech, impl DEVOPS, FullStack Java, Cloud"
+first_name: "Antonin"
+family_name: "Brugnot"
+company: "Onepoint"
+role: "Lead Tech"
+specialties:
+  - "DEVOPS"
+  - "FullStack Java"
+  - "Cloud Architecture"
+contact:
+  email: "a.brugnot@groupeonepoint.com"
+  location: "Nantes, France"
+birth_date: "1987-07-21"
 						</script></code></pre>
 					</section>
 					<section>
-						<img  style="max-width: 40%;" src="img/qrcode.svg"/>
-						<p>Scan me for more info</p>
+						<h3>Ressources utiles</h3>
+						<ul style="font-size: 0.8em;">
+							<li>📖 <a href="https://github.com/modelcontextprotocol/modelcontextprotocol">Spécification MCP officielle</a></li>
+							<li>🧪 <a href="https://github.com/modelcontextprotocol/inspector">MCP Inspector</a></li>
+							<li>📦 <a href="https://mastra.ai/mcp-registry-registry">Registry MCP</a></li>
+							<li>🔒 <a href="https://mseep.ai/">Évaluation sécurité MCP</a></li>
+						</ul>
 					</section>											
 				</section>	            
 			</div>
@@ -324,18 +516,70 @@
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
+			// Configuration Reveal.js améliorée
 			Reveal.initialize({
+				// Navigation et contrôles
 				controls: true,
 				progress: true,
 				center: true,
 				hash: true,
-				slideNumber: true,
+				slideNumber: 'c/t', // Affichage "slide actuelle / total"
+				
+				// Transitions
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				transitionSpeed: 'default', // default/fast/slow
+				backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+				
+				// Contrôles clavier améliorés
+				keyboard: {
+					// Pause/Resume avec barre d'espace
+					32: null, // désactive le comportement par défaut
+					// Navigation personnalisée
+					13: 'next', // Entrée = slide suivante
+					8: 'prev'   // Backspace = slide précédente
+				},
+				
+				// Auto-animations
+				autoAnimate: true,
+				autoAnimateEasing: 'ease-out',
+				autoAnimateDuration: 0.8,
+				
+				// Préchargement des slides
+				preloadIframes: true,
+				
+				// Configuration des plugins
+				plugins: [ 
+					RevealNotes, 
+					RevealMarkdown, 
+					RevealHighlight 
+				],
+				
+				// Configuration des notes de présentation
+				notes: {
+					pointer: {
+						size: 15,
+						color: 'rgba(255,0,0,0.8)'
+					}
+				},
+				
+				// Configuration du mode présentation
+				showSlideNumber: 'speaker'
+			});
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [RevealNotes, RevealMarkdown, RevealHighlight ]
+			// Raccourcis clavier personnalisés
+			Reveal.addKeyBinding({
+				keyCode: 77, // 'M'
+				key: 'M',
+				description: 'Toggle menu'
+			}, function() {
+				// Basculer le menu si disponible
+				console.log('Menu toggle (non implémenté)');
+			});
+
+			// Analytics des slides (optionnel)
+			Reveal.on('slidechanged', function(event) {
+				// Log pour analytics
+				console.log('Slide changed:', event.indexh, event.indexv);
 			});
 		</script>
 	</body>
