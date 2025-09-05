@@ -186,6 +186,76 @@
 						</aside>
 					</section>
 					<section>
+						<h3>🔍 Découverte de contexte en action</h3>
+						<div class="fragment">
+							<h4>Exemple simple avec Tavily Search</h4>
+							<p><small>L'IA explore et utilise les outils disponibles</small></p>
+						</div>
+						<aside class="notes">
+							Voyons concrètement comment MCP permet à l'IA de découvrir et d'utiliser 
+							des outils externes avec un exemple simple et pratique.
+						</aside>
+					</section>
+					<section>
+						<h4>1. Découverte des outils</h4>
+						<pre class="fragment"><code class="hljs json" data-trim>
+						{
+						"method": "tools/list",
+						"result": {
+							"tools": [
+							{
+								"name": "tavily_search",
+								"description": "Recherche web intelligente"
+							}
+							]
+						}
+						}
+						</code></pre>
+						<p class="fragment"><small>💡 L'IA découvre les capacités disponibles</small></p>
+					</section>
+					<section>
+						<h4>2. Exécution de l'outil</h4>
+						<pre class="fragment"><code class="hljs json" data-trim>
+						{
+						"method": "tools/call",
+						"params": {
+							"name": "tavily_search",
+							"arguments": {
+							"query": "MCP Model Context Protocol latest news",
+							"max_results": 5
+							}
+						}
+						}
+						</code></pre>
+						<p class="fragment"><small>🔍 Recherche d'informations en temps réel</small></p>
+					</section>
+					<section>
+						<h4>3. Résultat immédiat</h4>
+						<pre class="fragment"><code class="hljs json" data-trim>
+						{
+						"result": {
+							"results": [
+							{
+								"title": "MCP reaches 15,000 servers",
+								"url": "https://example.com/mcp-news",
+								"content": "Le protocole continue sa croissance..."
+							}
+							]
+						}
+						}
+						</code></pre>
+						<p class="fragment"><small>Données fraîches et structurées</small></p>
+					</section>
+					<section>
+						<h3>🛠️ Avantages clés</h3>
+						<ul>
+							<li class="fragment">⚡ <strong>Simplicité</strong> - Un appel, un résultat</li>
+							<li class="fragment">🎯 <strong>Standardisation</strong> - Interface unifiée</li>
+							<li class="fragment">🔄 <strong>Temps réel</strong> - Données toujours actuelles</li>
+							<li class="fragment">📦 <strong>Extensibilité</strong> - Nouveaux outils facilement</li>
+						</ul>
+					</section>
+					<section>
 						<h3>Outils de développement</h3>
 						<div class="fragment">
 							<h4>🧪 MCP Inspector</h4>
