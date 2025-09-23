@@ -103,7 +103,6 @@
 						</aside>
 					</section>
 					<section>
-						<h3>Échecs du passé</h3>
 						<ul>
 							<li class="fragment fade-in-then-semi-out">
 								<strong>Function Calling (OpenAI)</strong><br>
@@ -127,7 +126,7 @@
 						<h2>Model Context Protocol</h2>
 						<h4 class="fragment">La solution standardisée</h4>
 						<p class="fragment">
-							<small>Créé par Anthropic • Publié le 25 novembre 2024</small>
+							<small>Anthropic • Publié le 25 novembre 2024</small>
 						</p>
 						<aside class="notes">
 							MCP arrive comme une solution ouverte et standardisée pour connecter 
@@ -135,7 +134,7 @@
 						</aside>
 					</section>
 					<section>
-						<h3>Les promesses de MCP</h3>
+						<h3>Les promesses</h3>
 						<ul>
 							<li class="fragment">🔌 Connecter les LLM à des outils externes</li>
 							<li class="fragment">🔍 Explorer dynamiquement l'environnement</li>
@@ -156,7 +155,7 @@
 							</small></p>
 						</div>
 						<div class="fragment">
-							<h4>🏗️ Architecture modulaire</h4>
+							<h4>🏗️ D.I.Y</h4>
 							<p><small>SDK disponibles pour Node.js, Python, Java...</small></p>
 						</div>
 					</section>
@@ -184,7 +183,7 @@
 							<p><small>Composants réutilisables et extensibles</small></p>
 						</div>
 					</section>
-					<section data-background-image="img/mcp_architecture.png" data-background-size="contain">
+					<section data-background-image="img/mcp_architecture.gif" data-background-size="contain">
 						<aside class="notes">
 							Cette architecture permet une communication bidirectionnelle entre l'IA et les outils externes,
 							avec une couche d'abstraction qui garantit la sécurité et la standardisation.
@@ -435,7 +434,7 @@
 							<li class="fragment">🌱 Communauté en croissance rapide</li>
 							<li class="fragment">⚠️ Implémentations encore expérimentales</li>
 						</ul>
-						<p class="fragment" style="color: #f39c12;">
+						<p class="fragment" style="color: #e70d0d;">
 							<strong>→ Prudence recommandée en production</strong>
 						</p>
 					</section>
@@ -539,29 +538,15 @@
 					</div>
 				</section>
 				<section>
-					<h4>🛡️ Vue d'ensemble des menaces</h4>
-					<div class="fragment">
-						<ul style="font-size: 0.8em;">
-							<li>🎭 <strong>Tool Poisoning</strong> - Manipulation des descriptions</li>
-							<li>🧠 <strong>MPMA</strong> - Biais dans les préférences</li>
-							<li>⏳ <strong>Step-Controlled</strong> - Interruption du raisonnement</li>
-							<li>🦠 <strong>Trivial Trojans</strong> - Outils compromis</li>
-							<li>👥 <strong>Shadowing</strong> - Comportements cachés</li>
-							<li>💀 <strong>Lethal Trifecta</strong> - Attaque complète</li>
-						</ul>
-					</div>
 					<div class="fragment">
 						<p style="color: #e74c3c;"><strong>⚠️ Vigilance constante requise</strong></p>
 					</div>
 					</section>
 					<section>
 						<p><a href="https://www.catonetworks.com/blog/cato-ctrl-poc-attack-targeting-atlassians-mcp/?wvideo=g5saerpu50"><img src="https://embed-ssl.wistia.com/deliveries/a70e870f879f59477ee2016e12ad9d0c.jpg?image_play_button_size=2x&image_crop_resized=960x498&image_play_button_rounded=1&image_play_button_color=3f8666e0" width="400" height="207.5" style="width: 400px; height: 207.5px;"></a></p><p><a href="https://www.catonetworks.com/blog/cato-ctrl-poc-attack-targeting-atlassians-mcp/?wvideo=g5saerpu50">PoC Attack Targeting Atlassian’s MCP | Cato Networks</a></p>
-					</section>
-					<section>
-						<img src="img/github_mcp.jpg" alt="GitHub MCP">
-					</section>
-					<section>
-						<p><a href="https://www.generalanalysis.com/blog/supabase-mcp-blog">Supabase MCP Blog | General Analysis</a></p>
+						<aside class="notes">
+							Ne parle pas de la nationalité du support Atlassian. Soit toujours respectueux.. pareil sur github-mcp et supabase-mcp
+						</aside>
 					</section>
 					<!-- Bonnes pratiques -->
 					<section>
@@ -570,15 +555,15 @@
 					<section>
 						<h4>Principe du moindre privilège</h4>
 						<pre class="fragment"><code data-trim>
-# Mode lecture seule
-./k8s-mcp-server --read-only
+						# Mode lecture seule
+						./k8s-mcp-server --read-only
 						</code></pre>
 						<pre class="fragment"><code data-trim>
-# Limitation des outils
-ENABLED_TOOLS="confluence_search,jira_get_issue"
+						# Limitation des outils
+						ENABLED_TOOLS="confluence_search,jira_get_issue"
 
-# Ou via CLI
-docker run ... --enabled-tools "tool1,tool2" ...
+						# Ou via CLI
+						docker run ... --enabled-tools "tool1,tool2" ...
 						</code></pre>
 					</section>
 					<section>
@@ -681,12 +666,8 @@ birth_date: "1987-07-21"
 					</section>
 					<section>
 						<h3>Ressources utiles</h3>
-						<ul style="font-size: 0.8em;">
-							<li>📖 <a href="https://github.com/modelcontextprotocol/modelcontextprotocol">Spécification MCP officielle</a></li>
-							<li>🧪 <a href="https://github.com/modelcontextprotocol/inspector">MCP Inspector</a></li>
-							<li>📦 <a href="https://mastra.ai/mcp-registry-registry">Registry MCP</a></li>
-							<li>🔒 <a href="https://mseep.ai/">Évaluation sécurité MCP</a></li>
-						</ul>
+						<img style="max-width: 100%;" src="img/links.svg" alt="Ressources MCP"/>
+						<p>Avec <a href="https://github.com/antoBrugnot/qrcode-mcp">antoBrugnot/qrcode-mcp</a></p>
 					</section>											
 				</section>	            
 			</div>
