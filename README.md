@@ -1,4 +1,6 @@
-# talk-mcp
+# 🎤 Talk MCP : Des LLM statiques aux agents IA dynamiques et intégrés
+
+Et si vos IA pouvaient faire autre chose que parler ? Grâce au Model Context Protocol (MCP) d’Anthropic, on peut connecter un LLM à des outils réels : bases de données, systèmes de fichiers, APIs… Cette conférence montre comment créer des agents vraiment utiles avec MCP. Au programme : des cas concrets, une démo en live, et surtout un regard clair sur ce que ça change (et ce que ça implique) pour les devs/devops.
 
 ## Slides
 
