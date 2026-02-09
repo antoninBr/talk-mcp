@@ -1,4 +1,4 @@
 ---
-mode: agent
+agent: agent
 ---
 Sur github cherche les gist de l'utilisateur antoBrugnot.
