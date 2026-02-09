@@ -17,9 +17,26 @@ Et si vos IA pouvaient faire autre chose que parler ? Grâce au Model Context Pr
 ### Spécifications officielles MCP
 - **Schéma standardisé MCP** : https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/schema/2025-06-18/schema.ts
 - **Spécification MCP officielle** : https://github.com/modelcontextprotocol/modelcontextprotocol
+- **Spécification Authorization (OAuth 2.1)** : https://modelcontextprotocol.info/specification/draft/basic/authorization/
 
 ### Outils de développement
 - **MCP Inspector** (outil officiel de test et debug) : https://github.com/modelcontextprotocol/inspector
+
+## 🏢 Gouvernance MCP Enterprise
+
+### MCP Gateways
+Solutions de gouvernance centralisée pour les déploiements MCP en entreprise :
+- **Zuplo MCP Gateway** : https://zuplo.com/blog/zuplo-mcp-gateway
+- **Microsoft MCP Gateway** (Open Source)
+- **IBM ContextForge MCP Gateway** (Open Source)
+- **Airia MCP Gateway** : https://airia.com/airia-launches-mcp-gateway/
+- **Databricks MCP Catalog** : https://www.databricks.com/blog/accelerate-ai-development-databricks-discover-govern-and-build-mcp-and-agent-bricks
+- **Portkey MCP Hub** : https://portkey.ai/blog/the-hidden-challenge-of-mcp-adoption-in-enterprises
+
+### Contrôles organisationnels
+- **GitHub** : Policy MCP au niveau Org/Enterprise (désactivé par défaut)
+- **VS Code** : Policy `ChatMCP` = `off` | `registryOnly` | `allowed`
+- **Documentation GitHub** : https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-mcp-usage/configure-mcp-server-access
 
 ## 📦 Registries et catalogues
 
@@ -39,6 +56,12 @@ Et si vos IA pouvaient faire autre chose que parler ? Grâce au Model Context Pr
 
 ## 🔒 Sécurité et évaluation
 
+### Authentification MCP (OAuth 2.1)
+- **PKCE obligatoire** - Protection contre l'interception
+- **Dynamic Client Registration** (RFC7591)
+- **Resource Indicators** (RFC8707) - Tokens scopés par serveur
+- **Step-Up Authorization** - Moindre privilège dynamique
+
 ### Outils d'évaluation sécurité
 - **mseep.ai** (Évaluation sécurité MCP) : https://mseep.ai/
 
@@ -56,7 +79,7 @@ Et si vos IA pouvaient faire autre chose que parler ? Grâce au Model Context Pr
 
 ## 🏷️ Catégorisation par type
 
-### 🔗 GitHub (7 URLs)
+### 🔗 GitHub (4 URLs)
 - modelcontextprotocol/modelcontextprotocol
 - modelcontextprotocol/inspector  
 - camel-ai/mcpify
@@ -68,10 +91,20 @@ Et si vos IA pouvaient faire autre chose que parler ? Grâce au Model Context Pr
 - mcpcreator.com (SaaS)
 - mseep.ai (sécurité)
 
+### 🏢 MCP Gateways Enterprise (5 URLs)
+- zuplo.com (Zuplo MCP Gateway)
+- airia.com (Airia MCP Gateway)
+- databricks.com (MCP Catalog)
+- portkey.ai (MCP Hub)
+- docs.github.com (GitHub MCP Policy)
+
 ### 📰 Blogs/Articles (3 URLs)
 - catonetworks.com (PoC sécurité)
 - generalanalysis.com (blog Supabase)
 - socradar.io (guide sécurité)
+
+### 📋 Spécifications (1 URL)
+- modelcontextprotocol.info (Authorization OAuth 2.1)
 
 
 @Antonin Brugnot
