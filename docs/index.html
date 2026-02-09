@@ -600,6 +600,26 @@
 						</p>
 					</section>
 					<section>
+						<h4>🔐 Authentification MCP (OAuth 2.1)</h4>
+						<div class="fragment">
+							<p><small>
+								<a href="https://modelcontextprotocol.info/specification/draft/basic/authorization/">
+									Spécification Draft - Authorization
+								</a>
+							</small></p>
+						</div>
+						<ul>
+							<li class="fragment">🔑 <strong>PKCE obligatoire</strong> - Protection contre l'interception</li>
+							<li class="fragment">📋 <strong>Dynamic Client Registration</strong> (RFC7591)</li>
+							<li class="fragment">🎯 <strong>Resource Indicators</strong> (RFC8707) - Tokens scopés par serveur</li>
+							<li class="fragment">⬆️ <strong>Step-Up Authorization</strong> - Moindre privilège dynamique</li>
+							<li class="fragment">🔄 <strong>Token rotation</strong> - Fenêtre d'exposition limitée</li>
+						</ul>
+						<p class="fragment" style="color: #27ae60;">
+							<strong>→ Mitigation des attaques Cross-tool et Shadowing</strong>
+						</p>
+					</section>
+					<section>
 						<h4>Validation et registries</h4>
 						<div class="fragment">
 							<h5>🔍 Registry avec évaluation sécurité</h5>
